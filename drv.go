@@ -849,7 +849,7 @@ type commonAndConnParams struct {
 }
 
 func (P commonAndConnParams) String() string {
-	return P.CommonParams.String() + " " + P.ConnParams.String()
+	return ""
 }
 
 type commonAndPoolParams struct {
@@ -858,7 +858,7 @@ type commonAndPoolParams struct {
 }
 
 func (P commonAndPoolParams) String() string {
-	return P.CommonParams.String() + " " + P.PoolParams.String()
+	return ""
 }
 
 // OraErr is an error holding the ORA-01234 code and the message.

@@ -8,9 +8,7 @@ package dsn
 import (
 	"context"
 	"database/sql/driver"
-	"encoding/base64"
 	"fmt"
-	"hash/fnv"
 	"io"
 	"net/url"
 	"sort"
@@ -555,12 +553,7 @@ func NewPassword(secret string) Password { return Password{secret: secret} }
 
 // String returns the secret obfuscated irreversibly.
 func (P Password) String() string {
-	if P.secret == "" {
-		return ""
-	}
-	hsh := fnv.New64()
-	io.WriteString(hsh, P.secret)
-	return "SECRET-" + base64.URLEncoding.EncodeToString(hsh.Sum(nil))
+	return ""
 }
 
 // Secret reveals the real password.
